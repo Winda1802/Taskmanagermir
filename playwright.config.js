@@ -27,5 +27,7 @@ module.exports = defineConfig({
     url: 'http://localhost:3000',
     reuseExistingServer: !isCI,
     timeout: 120000,
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
 });

@@ -7,8 +7,8 @@ test.describe.serial('TaskForce App', () => {
     // Reset de database voor elke test
     await request.post('/api/reset');
     await page.goto('/');
-    // Wacht tot taken geladen zijn van API
-    await page.waitForSelector('.task-item');
+    // Wacht tot de pagina volledig geladen is en taken zichtbaar zijn
+    await page.waitForSelector('.task-item', { timeout: 30000 });
   });
 
   test('should display the app title', async ({ page }) => {
