@@ -27,6 +27,14 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Start server
+        run: npm start &
+        env:
+          CI: true
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000 --timeout 60000
+
       - name: Run Playwright tests
         run: npx playwright test --project=chromium
         env:
