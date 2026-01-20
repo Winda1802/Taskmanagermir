@@ -9,7 +9,7 @@ module.exports = defineConfig({
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
   workers: 1,
-  reporter: isCI ? 'list' : 'html',
+  reporter: isCI ? [['list'], ['html', { open: 'never' }]] : 'html',
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
