@@ -20,6 +20,7 @@ test.describe.serial('TaskForce App', () => {
     await expect(tasks).toHaveCount(5);
   });
 
+  
   test('should display correct initial statistics', async ({ page }) => {
     const totalTasks = page.locator('#totalTasks');
     const completedTasks = page.locator('#completedTasks');
