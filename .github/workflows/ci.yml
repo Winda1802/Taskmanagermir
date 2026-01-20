@@ -26,6 +26,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
+        working-directory: ${{ github.workspace }}
 
       - name: Run Playwright tests
         run: npx playwright test --project=chromium
