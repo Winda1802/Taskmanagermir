@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskForce - Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 TaskForce</h1>
+            <p class="subtitle">Jouw persoonlijke taakbeheerder</p>
+        </header>
+
+        <main>
+            <section class="add-task-section">
+                <form id="addTaskForm" class="add-task-form">
+                    <input 
+                        type="text" 
+                        id="newTaskInput" 
+                        class="new-task-input" 
+                        placeholder="Nieuwe taak toevoegen..."
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="add-task-btn">Toevoegen</button>
+                </form>
+            </section>
+
+            <section class="task-list-section">
+                <h2>Mijn Taken</h2>
+                <ul class="task-list" id="taskList">
+                    <!-- Taken worden hier dynamisch geladen -->
+                </ul>
+            </section>
+
+            <section class="stats-section">
+                <div class="stat">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    <span class="stat-label">Totaal</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    <span class="stat-label">Voltooid</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 TaskForce App</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
