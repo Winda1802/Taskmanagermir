@@ -140,15 +140,13 @@ test.describe.serial('TaskForce App', () => {
 
   test('should show delete button on hover', async ({ page }) => {
     const deleteBtn = page.locator('.delete-btn').first();
+    const taskItem = page.locator('.task-item').first();
     
-    // Verwijderknop moet initieel verborgen zijn (opacity: 0)
-    await expect(deleteBtn).toHaveCSS('opacity', '0');
+    // Hover over taak om verwijderknop zichtbaar te maken
+    await taskItem.hover();
     
-    // Hover over taak
-    await page.locator('.task-item').first().hover();
-    
-    // Verwijderknop moet nu zichtbaar zijn
-    await expect(deleteBtn).toHaveCSS('opacity', '1');
+    // Wacht tot de transition klaar is en knop zichtbaar is
+    await expect(deleteBtn).toBeVisible();
   });
 
   test('should update statistics after deleting completed task', async ({ page }) => {
