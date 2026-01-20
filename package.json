@@ -7,10 +7,13 @@
     "start": "node server.js",
     "dev": "node server.js",
     "test": "npx playwright test",
-    "test:ui": "npx playwright test --ui",
-    "prepare": "husky install"
+    "test:ui": "npx playwright test --ui"
   },
-  "keywords": ["task", "manager", "todo"],
+  "keywords": [
+    "task",
+    "manager",
+    "todo"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -19,7 +22,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
-    "husky": "^8.0.0",
     "serve": "^14.2.0"
   }
 }
