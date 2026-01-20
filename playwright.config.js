@@ -9,7 +9,7 @@ module.exports = defineConfig({
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
   workers: 1,
-  reporter: 'html',
+  reporter: isCI ? 'list' : 'html',
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
@@ -26,5 +26,6 @@ module.exports = defineConfig({
     command: 'node server.js',
     url: 'http://localhost:3000',
     reuseExistingServer: !isCI,
+    timeout: 120000,
   },
 });

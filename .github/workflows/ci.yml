@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     
     steps:
       - name: Checkout code
@@ -24,10 +25,12 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npm test
+        run: npx playwright test --reporter=list
+        env:
+          CI: true
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
